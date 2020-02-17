@@ -1,0 +1,27 @@
+<style>
+  #image{
+    background: #434f79;
+    width: 200px;
+    border-radius: 100px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    float: left;
+    shape-outside: border-box;
+  }
+  #image:after{
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+</style>
+<h1 class="primary">About Me</h1>
+<p class="secondary">A Small Summary about me</p>
+<img id="image" src="./images/Profile.png" onerror="this.src='//:0'">
+<p id="ImageText" class="secondary">I am Christopher-Robin and im currently completing my last year of school at Collingwood College. My passions are: Videogames, Programming, Music and Photography, so when it came time to create a Media Project i wanted to combine two of my passions. This Lead to the Creation of this website which serves me as a Publishing Website for my stock photos and as a Media Project</p>

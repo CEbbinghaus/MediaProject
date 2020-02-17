@@ -1,0 +1,36 @@
+.imageTile {
+  display: inline-block;
+  width: 49.7%;
+  height: 40%;
+  background-size: cover;
+  position: relative;
+}
+
+.imageTile #Info {
+  /* transition: .35S; */
+  width: 90%;
+  height: 90%;
+  /* background: #0008; */
+  opacity: 0;
+  /* padding: 5% 5%; */
+}
+
+.imageTile #Info #Tab {
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  top: 2%;
+  right: 2%;
+  width: 2.3vw;
+  height: 2.3vw;
+  font-size: 2.3vw;
+}
+
+.imageTile #Info #Tab:hover {
+  color: #00cbff;
+  /* text-shadow: 1px -1px 5px #00cbff50; */
+}
+
+.imageTile:hover #info {
+  opacity: 1;
+}

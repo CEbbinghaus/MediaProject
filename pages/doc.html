@@ -1,0 +1,87 @@
+<style>
+  #ScrollContainer{
+    width: 100%;
+    height: 30%;
+    }
+  #ScrollContainer ul{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  #ScrollContainer ul li{
+    height: 80%;
+    width: 30%;
+    margin: 1% 1.3%;
+    background: #677d8b;
+    box-shadow: 5px 5px 10px #0003;
+    display: inline-block;
+    background-size: cover;
+    cursor: pointer;
+    /* background-position: center; */
+  }
+  #ScrollContainer ul li:hover{
+    box-shadow: 7px 7px 20px #000a;
+  }
+  .docPage{
+    position: relative;
+    display: inline-block;
+    width: 80%;
+  }
+  .docPage .image{
+    display: block;
+    max-width: 100%;
+    /* max-height:95px; */
+    width: auto;
+    height: auto;
+    margin-top: 5vh;
+  }
+
+  #Images{
+    margin-top: 5vh;
+    align-self: center;
+  }
+</style>
+<script id="RunAfterLoad">
+fetch("./images/designdoc/list.php").then(async uj => {
+    let a = [];
+    ej = await uj.json();
+    ej.Data.forEach(v => {
+      let id = parseFloat(Math.random().toString().slice(2, 9)).toString("32")
+      let le = $(`<li id="${id}"></li>`)
+      le.css("background-image", "url('" + location.href + "images/designdoc/" + v.Name + "')")
+      let e = $("<div class='docPage'><img id='image' class='image openTab'></img></div>");
+      // e.find("#image").css("background-image", "url('./images/DesignDoc/" + v.Name + "')")
+      e.find("#image").attr("src", location.href + "images/designdoc/" + v.Name.replace("-min", ""));
+      a.push(location.href + "images/designdoc/" + v.Name.replace("-min", ""));
+      $("#docList").append(le);
+      $("#Images").append(e);
+      le.click(function(){
+        e[0].scrollIntoView();
+      })
+    })
+    window.imageList = a;
+    $(".openTab").click(function(){
+      openImage($(this).attr("src"));
+      // let b= window.t = open($(this).attr("url"));
+    })
+  }).catch(err => {
+    console.error(err);
+    alert("sorry i Couldnt Find the Nesscary Data");
+  })
+</script>
+<h1 class="primary">Documentation</h1>
+<p class="secondary">Welcome to the Documentation Page</p>
+<div id="ScrollContainer">
+  <ul id="docList">
+  </ul>
+</div>
+<center>
+  <div id="Images">
+    
+  </div>
+</center>

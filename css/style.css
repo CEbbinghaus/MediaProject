@@ -1,0 +1,250 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  background: #BEC5C1;
+  font-family: Ubuntu;
+}
+@font-face{
+  font-family: Ubuntu;
+  src: url(../../../data/fonts/GoogleFonts/Ubuntu.ttf);
+}
+
+#Content {
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  color: #fff;
+  z-index: 9999;
+  position: fixed;
+}
+
+#Container {
+  height: 80%;
+  width: 80%;
+  background: #495963;
+  margin: 5% 9%;
+  box-shadow: 10px 10px 60px #000a;
+  border-radius: 10px;
+}
+
+#ImageBG {
+  z-index: 1;
+  position: fixed;
+  background-size: cover;
+  background-position: center;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  filter: blur(20px);
+}
+
+#Nav-Bar{
+  height: 100%;
+  width: 6%;
+  float: left;
+  background: #2f3b42;
+  box-shadow: 5px 5px 10px #0003;
+  border-radius: 10px 0px 0px 10px;
+}
+
+#Nav-Bar nav ul{
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#page{
+  /* padding: 10px 8%; */
+  height: 100%;
+  padding: 0px 20px;
+  /* width: 100%; */
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  position: absolute;
+}
+
+::-webkit-scrollbar-track {
+  background: #0000;
+}
+
+::-webkit-scrollbar-corner {
+  background: #0000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff49;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover{
+  cursor: pointer;
+  background: #ffffff88;
+  border-radius: 100px;
+} 
+
+div{
+    background-position: center;
+    background-size: 120vw 120vh;
+}
+
+.tab{
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.active .tab{
+  cursor: default;
+}
+#Navigation li {
+  height: 4.8vw;
+  width: 100%;
+  font-size: 3vw;
+  text-align: center;
+  transition: .35s;
+}
+
+#Navigation li a{
+  padding-top: 10px;
+}
+
+#Navigation li:hover {
+  background: #455761;
+}
+#Navigation li:hover:first-child {
+  border-radius: 10px 0px 0px 0px;  
+}
+
+#Navigation li.active {
+  background: #4fb2eb;
+  box-shadow: 4px 4px 10px #0003;
+}
+#Navigation li.active:first-child {
+  border-radius: 10px 0px 0px 0px;
+}
+
+.primary {
+  font-size: 4em;
+  padding: 0px;
+  margin: 10px 10px 10px 0px;
+  color: #fff;
+}
+
+.primary-under{
+  font-size: 3em;
+  padding: 0px;
+  margin: 10px 10px 10px 0px;
+  color: #fff;
+}
+
+.secondary{
+  font-size: 1.7em;
+  color: #dddddd;
+}
+
+.inp input:focus+span {
+  color: #07f;
+  transform: translateY(-26px);
+}
+
+#feedback{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 2vh;
+  height: 2vh;
+  margin: 2vh 2vh;
+  font-size: 6vh;
+}
+
+#overlayBackground{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: #000b;
+}
+#imageForeground{
+  /* display: inline-block; */
+  max-width: 95vw;
+  max-height: 95vh;
+  width: auto;
+  height: auto;
+  box-shadow: 0px 0px 50px #000a;
+  /* margin: 2.5% 2.5%; */
+}
+#cancel{
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 4vh;
+  height: 4vh;
+  font-size: 4vh;
+}
+#cancel:hover{
+    color: #00cbff;
+    text-shadow: 1px -1px 5px #00cbff50;
+}
+
+.link{
+  color: white;
+  cursor: pointer;
+}
+
+.link:hover{
+  color: #547e88;
+  text-shadow: 2px -2px 10px #475a5f70;
+}
+
+  #copyrightContainer {
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .copyright {
+    font-size: 1.6em;
+    display: inline;
+  }
+
+/* @media screen and (max-width: 1000px){
+  #Container{
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    border-radius: 0px;
+    overflow-y: scroll;
+  }
+  #Container::-webkit-scrollbar{
+    width: 0px;
+  }
+  #Nav-Bar{
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+  }
+  #Navigation li {
+    height: 30%;
+    width: 100%;
+    padding-top: 3vh;
+    font-size: 20vh;
+    text-align: center;
+    border-radius: 0px;
+    transition: .35s;
+  }
+  #Navigation.active:first-child{
+    border-radius: 0px;
+  }
+} */

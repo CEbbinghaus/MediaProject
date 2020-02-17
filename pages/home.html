@@ -1,0 +1,73 @@
+<h1 class="primary">Stock Photos</h1>
+<p class="secondary">For my Media Project i decided to create a gallery of Stock Photos and a Website to Display them all.</p>
+<script id="RunAfterLoad">
+  let a = [];
+  fetch("./images/gallery/thumbnails/list.php").then(async uj => {
+    ej = await uj.json();
+    ej.Data.forEach(v => {
+      let e = $($("#ImageTemplate").html());
+      e.css("background-image", "url('./images/gallery/thumbnails/" + v.Name + "')")
+      e.find("#Tab").attr("url", location.href + "images/gallery/" + v.Name.replace("-min", ""));
+      a.push(location.href + "images/gallery/" + v.Name.replace("-min", ""));
+      $("#ImageContainer").append(e);
+    })
+    window.imageList = a;
+    $(".openTab").click(function(){
+      openImage($(this).attr("url"));
+      // let b= window.t = open($(this).attr("url"));
+    })
+  }).catch(() => {
+    alert("sorry i Couldnt Find the Nesscary Data");
+  })
+  // onfocus = () => {
+  //   if(window.t){
+  //     t.close()
+  //   }
+  // }
+</script>
+<link rel="stylesheet" href="./css/home.css">
+<script type="text/scss" class="">
+  .imageTile{
+    display: inline-block;
+    width: 49.7%;
+    height: 40%;
+    background-size: cover;
+    position: relative;
+    #Info{
+      transition: .35S;
+      width: 90%;
+      height: 90%;
+      background: #0008;
+      opacity: 0;
+      padding: 5% 5%;
+      #Tab {
+        $Size: 2.3vw;
+        display: inline-block;
+        position: absolute;
+        cursor: pointer;
+        top: 2%;
+        right: 2%;
+        width: $Size;
+        height: $Size;
+        font-size: $Size;
+        &:hover {
+          color: #00cbff;
+          text-shadow: 1px -1px 5px #00cbff50;
+        }
+      }
+    }
+    &:hover #info{
+      opacity: 1;
+    }
+  }
+</script>
+<template id="ImageTemplate">
+  <div class="ImageTile">
+    <div id="Info">
+      <div id="Tab" class="fas fa-external-link-alt openTab"></div>
+    </div>
+  </div>
+</template>
+<div id="ImageContainer">
+
+</div>

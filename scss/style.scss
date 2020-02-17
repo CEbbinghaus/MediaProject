@@ -1,0 +1,32 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  background: #121212;
+}
+#Content{
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  color: #fff;
+  z-index: 9999;
+  position: fixed;
+}
+#Container{
+  height: 80%;
+  width: 80%;
+  background: #535353;
+  // transform: translate(-50%, -50%);
+  margin: 5% 9%;
+}
+#ImageBG{
+  z-index: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  filter: blur(30px);
+}
